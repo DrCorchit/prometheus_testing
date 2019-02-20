@@ -14,7 +14,6 @@ public class BasicExample implements Runnable {
 		GAUGE = Gauge.build()
 				.name("task_duration_seconds")
 				.help("Testing prometheus gauge functionality")
-				//.labelNames("task1", "task2")
 				.register();
 		
 		COUNTER = Counter.build()
@@ -36,6 +35,7 @@ public class BasicExample implements Runnable {
 					simulateProcessing();
 				}
 			});
+		
 		
 		/*
 		long start = System.currentTimeMillis();

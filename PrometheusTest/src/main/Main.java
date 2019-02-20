@@ -28,6 +28,9 @@ public class Main {
 		System.out.println("Scraping Test");
 		scrapingTest();
 		
+		System.out.println("Query Test");
+		queryTest("requests_total[60s]");
+		
 	}
 	
 	private static void simpleTest() {
