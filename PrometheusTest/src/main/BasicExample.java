@@ -4,7 +4,6 @@ import java.util.Random;
 
 import io.prometheus.client.Counter;
 import io.prometheus.client.Gauge;
-import io.prometheus.client.Gauge.Child;
 
 public class BasicExample implements Runnable {
 	
@@ -15,7 +14,7 @@ public class BasicExample implements Runnable {
 		GAUGE = Gauge.build()
 				.name("task_duration_seconds")
 				.help("Testing prometheus gauge functionality")
-				.labelNames("task1", "task2")
+				//.labelNames("task1", "task2")
 				.register();
 		
 		COUNTER = Counter.build()
@@ -63,13 +62,13 @@ public class BasicExample implements Runnable {
 		Random r = new Random();
 		long wait = (long) (r.nextDouble() * 2000);
 
-		System.out.println(wait);
 		try {
 			Thread.sleep(wait);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		System.out.println(wait);
 	}
 	
 }
